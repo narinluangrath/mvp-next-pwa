@@ -1,7 +1,15 @@
 const withOffline = require('next-offline');
 
 const offlineConfig = {
-  generateInDevMode: true
+  generateInDevMode: true,
+  workboxOpts: {
+   swDest: 'static/service-worker.js'
+  }
 }
 
-module.exports = withOffline(offlineConfig);
+module.exports = (phase, { defaultConfig }) => {
+  return {
+    ...defaultConfig,
+    ...withOffline(offlineConfig)
+  }
+}

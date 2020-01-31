@@ -1,0 +1,30 @@
+# localhost:4000 {
+#   proxy /service-worker.js localhost:3000 {
+#     transparent
+#     health_check /
+#   }
+
+#   proxy / localhost:3000 {
+#     transparent
+#     health_check /
+#   }
+# }
+
+# localhost:4000 {
+    # This sends localhost:4000/shit -> 127.0.0.1:8080/shit/shit
+    # This sends localhost:4000/ -> 127.0.0.1:8080/shit
+    # proxy /shit 127.0.0.1:8080/shit {
+    #   transparent
+    # }
+
+    # This sends locahost:4000/ -> 127.0.0.1:8080/shit
+    # proxy / 127.0.0.1:8080/shit {
+    #   transparent
+    # }
+# }
+
+localhost:4000 {
+  proxy / localhost:3000/_next/static {
+    transparent
+  }
+}
