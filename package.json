@@ -4,9 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "rm -rf .next && next build",
+    "start": "next start && caddy"
   },
   "dependencies": {
     "next": "^9.2.1",
