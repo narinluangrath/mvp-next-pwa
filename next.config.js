@@ -7,7 +7,7 @@ module.exports = (phase, { defaultConfig }) => {
     ...withOffline({
       generateInDevMode: true,
       workboxOpts: {
-       swDest: path.resolve(__dirname, 'static/service-worker.js')
+       swDest: path.resolve(__dirname, 'public/service-worker.js')
       }
     })
   }
